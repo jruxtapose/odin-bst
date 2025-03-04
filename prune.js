@@ -1,9 +1,10 @@
 export default function pruneDuplicates(sortedArray){
-    const arrayCopy = [...sortedArray];
-    for (let i = 0; i < arrayCopy.length - 1; i++){
-        while (i < arrayCopy.length - 1 && arrayCopy[i] === arrayCopy[i + 1]){
-            arrayCopy.splice(i, 1);
+    if (sortedArray.length === 0) return [];
+    const uniqueArray = [sortedArray[0]];
+    for (let i = 1; i < sortedArray.length; i++){
+        if(sortedArray[i] !== sortedArray[i - 1]){
+            uniqueArray.push(sortedArray[i]);
         }
     }
-    return arrayCopy;
+    return uniqueArray;
 }

@@ -9,8 +9,11 @@ export default class Tree {
     }
 
     buildTree(array) {
+        // Sort tree using mergesort.
         const sortedArray = mergeSort(array);
+        // Remove duplicate values from sorted array.
         const prunedArray = pruneDuplicates(sortedArray);
+        // Create BST from sorted and pruned array.
         return balancedBinarySort(prunedArray);
     }
 
